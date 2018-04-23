@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h2>JavaScript BlinkUp Library<sup>beta</sup> 0.3.2</h2><p>Electric Imp’s BlinkUp&trade; technology provides a means to securely configure an imp-enabled device for local network access and authorize its access to an Electric Imp impCloud&trade;. Connectivity may be wireless or wired, depending on the type of imp integrated into the device. The network access credentials are transmitted to the device optically using the display of a mobile phone or tablet: they are encoded as screen flashes of various intensities.</p>
+<p>BlinkUp can be supported in iOS- and Android-based mobile apps using native SDKs which Electric Imp makes freely available to its commercial partners. This is the recommended means of incorporating BlinkUp into customers’ mobile apps.</p>
+<p>Electric Imp also provides a third BlinkUp implementation which uses JavaScript to deliver the process through a mobile web browser. Our intention is to make this available to customers to allow them to target mobile platforms which are not supported by Electric Imp through native SDKs. It also allows them to develop apps for enterprise end-users who restrict access to mobile OS app stores for security or other reasons.</p>
+<p>This document describes how the Electric Imp JavaScript BlinkUp library might be used to deliver BlinkUp through a mobile browser. The term ‘mobile browser’ includes not only web browsers on mobile devices but also web browser functionality integrated into native mobile apps. Web browser apps will require the JavaScript and entry point HTML to be stored on a remote server as part of a web app. The use of a web browser view within a native app allows the code to be stored locally, inside the app itself.</p>
+<p><strong>Important</strong> This software is being provided in a pre-release beta form solely for customer evaluation and testing.</p>
+<h2>Limitations of JavaScript BlinkUp</h2><p>Where possible, we recommend customers make use of the <a href="https://electricimp.com/docs/manufacturing/sdkdocs/">two native BlinkUp SDKs</a>. These provide much greater control over the BlinkUp process than is possible through the web browser views which are used to deliver JavaScript BlinkUp. The JavaScript BlinkUp Library<sup>beta</sup> has a number of other important limitation of which potential users need to be aware:</p>
+<ul>
+<li><p>JavaScript BlinkUp may not be compatible with all mobile browsers. At this time, mobile Safari (WebKit) and Android Browser are compatible. Chrome on Android is not fully compatible (results vary with device). Windows 10 (mobile) is not supported, but Internet Explorer on earlier versions of Windows Phone has limited support.</p>
+</li>
+<li><p>Web apps can generally not control the mobile device’s screen brightness. As such, the end-user should be prompted by your web app’s UI to increase the brightness of their device’s display to prevent failed BlinkUps.</p>
+</li>
+<li><p>Power-saving features made available by mobile operating system and device providers may affect JavaScript BlinkUp performance, typically by auto-dimming the screen. Again, the end-user should be prompted to disable these features to prevent failed BlinkUps.</p>
+</li>
+<li><p>The code is intended for use with mobile devices but may also operate within a desktop browser. This usage mode is not recommended: configuring a connected product by holding it up to a desktop monitor is not ideal (or comfortable for the user). The JavaScript BlinkUp library<sup>beta</sup>’s <code>BU</code> object now contains a property, <em>preventFastFlashing</em> which can be set to force a lower speed, desktop-oriented mode. In the example code provided with the JavaScript BlinkUp library<sup>beta</sup>, this mode is automatically selected if the user runs the sample web app on a non-mobile browser. <strong>Note</strong> this mode requires the target device to be running impOS 34 or above.</p>
+</li>
+</ul>
+<h2>Using the JavaScript BlinkUp library<sup>beta</sup></h2><p>The code provided with this Read Me forms a complete working example of JavaScript BlinkUp. It is aimed at commercial customers who are preparing JavaScript BlinkUp-based web app(s) for the imp-enabled connected products. Customers will require an API key <em>(see below)</em>.</p>
+<p>To produce a commercial web app, it is necessary to create a UI which prompts the user for the required network configuration information and, once the BlinkUp process has been initiated by the user, assists the user through the BlinkUp process. The app should also guide the end-user through preparing their device fro BlinkUp: for example, instructing them to put their device’s display on a high brightness setting <em>(see ‘Limitations’, above)</em>. An end-user facing web app would not require the user to enter an API key &mdash; this should retrieved at runtime from the customer’s server in a secure manner. Depending on the nature of the connected product, not all of the configuration options presented by this example may be needed in the web app.</p>
+<p><strong>Important</strong> Customers should remember that, under the terms of their agreement with Electric Imp, they must include the text “BlinkUp™ powered by Electric Imp” prominently in any UI that incorporates BlinkUp. The image is typically included in the pre-flash countdown screen, as demonstrated by the Electric Imp mobile app. A white and black version of the image can be found at the path <code>example/images/countdownTextBlack.svg</code> and <code>example/images/countdownTextWhite.svg</code>.</p>
+<ul>
+<li><p>Please see our current <a href="https://electricimp.com/terms/">Terms of Service</a> and our <a href="https://www.electricimp.com/aboutus/mediaresources/">Branding Usage Guidelines</a> for more information and guidance on the commercial usage of Electric Imp trademarks and imagery.</p>
+</li>
+<li><p>The JavaScript BlinkUp library<sup>beta</sup> makes use of third-party software which must be appropriately acknowledged in any web app. See <a href="#license">‘License’</a>, below, for more information on the JavaScript BlinkUp library<sup>beta</sup> license and those of its third-party software components.</p>
+</li>
+</ul>
+<h3>How to include the JavaScript BlinkUp library<sup>beta</sup> in Your Web App</h3><p>The JavaScript BlinkUp library<sup>beta</sup> can be included as a module using <em>require</em>. This can be especially useful if a build system is used.</p>
+<pre class="prettyprint source"><code>var blinkup = require('blinkup/blinkupSDK');</code></pre><p>If modules are not used in the project, the global variable <em>BU</em> can be used in place of the require if the <code>blinkupSDK.min.js</code> file has been loaded.</p>
+<pre class="prettyprint source"><code>// In the HTML file
+&lt;script src=&quot;blinkupSDK.min.js&quot; type=&quot;text/javascript&quot;>&lt;/script>
+
+// In the JS file or script portion of the HTML
+var blinkup = BU;</code></pre><h3>Prerequisites</h3><p>JavaScript BlinkUp is supported by the jQuery, jQuery mobile, jQueryUI and AnimationFrame libraries. In order to use the JavaScript BlinkUp, the required libraries must be loaded in the correct order. What follows is an example to go in the <code>&lt;head&gt;</code> section of the web page presenting the device configuration UI:</p>
+<pre class="prettyprint source"><code>&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js&quot;>&lt;/script>
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css&quot;>
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js&quot;>&lt;/script>
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js&quot;>&lt;/script>
+&lt;script src=&quot;AnimationFrame.min.js&quot; type=&quot;text/javascript&quot;>&lt;/script>
+&lt;script src=&quot;blinkupSDK.min.js&quot; type=&quot;text/javascript&quot;>&lt;/script></code></pre><p><strong>Note</strong> This example imports <code>blinkupSDK.min.js</code> which is the minified version of <code>blinkupSDK.js</code>. It is recommended that you always use the minified version as it is compressed for faster load times. The JavaScript BlinkUp library<sup>beta</sup> is always loaded synchronously.</p>
+<p>JavaScript BlinkUp assumes that some elements exist in the web page’s DOM and uses these elements to present the BlinkUp and associated information. The page structure is as follows:</p>
+<ul>
+<li><code>BU-root</code><ul>
+<li><code>BU-progress</code></li>
+<li><code>BU-canvas</code></li>
+</ul>
+</li>
+</ul>
+<p>The <code>BU-root</code> element specifies the root element under which other BlinkUp UI elements can be found. It is a recommended (but not required) convention.</p>
+<p><code>BU-progress</code> is an element (typically a <code>div</code> element) which functions as the progress visual for when the BlinkUp is in progress. By default the item is scaled horizontally. The default behavior can be changed by setting the <em>BU.progressCallback(progress)</em> function.</p>
+<p><code>BU-canvas</code> is the canvas element which will become the target for the BlinkUp flasher. The canvas must be placed in a parent that has a white background color.</p>
+<h3>Authentication and API Keys</h3><p>To perform BlinkUp you will need an API key. For production BlinkUp, ie. for a web app which an end-user will run to configure a production device in the field, you need to pass in your BlinkUp API key, just as you do for apps based on the native iOS and Android BlinkUp SDKs. Customers can obtain BlinkUp API Keys from <a href="mailto:support@electricimp.com">Electric Imp</a>. <strong>Note</strong> BlinkUp API keys are only made available to Electric Imp Customers, not to holders of free Electric Imp accounts.</p>
+<h3>Basic JavaScript BlinkUp library<sup>beta</sup> Usage</h3><p>A basic JavaScript BlinkUp consists of three calls to the JavaScript BlinkUp library<sup>beta</sup>. Here is a simplified example:</p>
+<pre class="prettyprint source"><code>var blinkup = require('blinkup/blinkupSDK'); // or blinkup = BU; if not using modules
+blinkup.getConfigId(&quot;myElectricImpAPIKey&quot;, null, &quot;production&quot;, function(err, configId){
+    if (err){
+        // Handle error
+    } else {
+        var networkConfig = new blinkup.NetworkConfig({
+            ssid: &quot;someSSID&quot;,
+            password: &quot;somePassword&quot;
+        });
+
+        blinkup.startNetworkFlash(configId, networkConfig,
+            function(){
+                blinkup.pollForDeviceInfo(configId, function(err, data){
+                    if (err){
+                        // Handle error
+                        // (device rejected or server connection timed out)
+                    }
+                    else if (data){
+                        // Do something with data
+                    }
+                });
+            }
+        );
+    }
+});</code></pre><h2>Web App UI Recommendations</h2><h3>GPU Rasterization</h3><p>In order to enable GPU improvements on Chrome, please add the following meta viewport tags to your HTML header. <code>user-scalable=no</code> is optional, but recommended:</p>
+<pre class="prettyprint source"><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, minimum-scale=1.0, user-scalable=no&quot;></code></pre><h3>Mobile Scrolling</h3><p>When a hardware device is placed on the mobile screen, it may cause the screen to scroll due to interference. It is recommended that you capture <code>touchmove</code> events on the body during the countdown / flashing stage. If you are using the provided <code>ui.js</code> example, this will already be performed.</p>
+<h2>License</h2><p>The Electric Imp JavaScript BlinkUp library<sup>beta</sup> contains software copyright &copy; 2015-16, Electric Imp, Inc.</p>
+<p>The animation code contained in the file <code>AnimationFrame.min.js</code> is copyright &copy; Oleg Slobodskoi, 2015 and issued under terms of the <a href="https://en.wikipedia.org/wiki/MIT_License#License_terms">the MIT License</a>. The source code can be found at <a href="https://github.com/kof/animationFrame"><em>https://github.com/kof/animationFrame</em></a>.</p>
+<p>Lightbox code contained in the file <code>featherlight.min.js</code> is copyright &copy; Noël Raoul Bossart, 2013 and issued under the terms of the <a href="https://en.wikipedia.org/wiki/MIT_License#License_terms">the MIT License</a>. The source code can be found at <a href="http://noelboss.github.io/featherlight/"><em>http://noelboss.github.io/featherlight/</em></a>.</p></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-blinkupSDK.html">blinkupSDK</a></li></ul><h3>Classes</h3><ul><li><a href="module-blinkupSDK-ConfigId.html">ConfigId</a></li><li><a href="module-blinkupSDK-DeviceInfo.html">DeviceInfo</a></li><li><a href="module-blinkupSDK-NetworkConfig.html">NetworkConfig</a></li><li><a href="module-blinkupSDK-NetworkProxy.html">NetworkProxy</a></li><li><a href="module-blinkupSDK-StaticAddressing.html">StaticAddressing</a></li></ul><h3>Global</h3><ul><li><a href="global.html#BU">BU</a></li><li><a href="global.html#BUNetworkConfig">BUNetworkConfig</a></li><li><a href="global.html#BUNetworkProxy">BUNetworkProxy</a></li><li><a href="global.html#BUStaticAddressing">BUStaticAddressing</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Thu Mar 08 2018 14:25:34 GMT-0600 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

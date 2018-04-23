@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: ConfigId</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Class: ConfigId</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="module-blinkupSDK.html">blinkupSDK</a>~</span>ConfigId</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+
+    <h4 class="name" id="ConfigId"><span class="type-signature"></span>new ConfigId<span class="signature">(params)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Represents a ConfigId returned by the Electric Imp API corresponding to a BlinkUp attempt.
+This object is created by the module:blinkupSDK.getConfigId method.
+You should never have to create it yourself.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>params</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Initialization parameters</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blinkupSDK.js.html">blinkupSDK.js</a>, <a href="blinkupSDK.js.html#line109">line 109</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var blinkup = require('blinkup/blinkupSDK');
+blinkup.getConfigId('myElectricImpAPIKey', null, 'production', function (err, configId) {
+  if (err) {
+    // Handle error
+  } else {
+     // The configId has been retrieved.
+     // Generally it should be passed to the startNetworkFlash function
+     var theConfigId = configId;
+  }
+});</code></pre>
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="apiKey"><span class="type-signature"></span>apiKey<span class="type-signature"></span></h4>
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blinkupSDK.js.html">blinkupSDK.js</a>, <a href="blinkupSDK.js.html#line128">line 128</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="environment"><span class="type-signature"></span>environment<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Production environment for API calls
+Ensure the correlating apiKey is used
+Values: 'production'
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blinkupSDK.js.html">blinkupSDK.js</a>, <a href="blinkupSDK.js.html#line135">line 135</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-blinkupSDK.html">blinkupSDK</a></li></ul><h3>Classes</h3><ul><li><a href="module-blinkupSDK-ConfigId.html">ConfigId</a></li><li><a href="module-blinkupSDK-DeviceInfo.html">DeviceInfo</a></li><li><a href="module-blinkupSDK-NetworkConfig.html">NetworkConfig</a></li><li><a href="module-blinkupSDK-NetworkProxy.html">NetworkProxy</a></li><li><a href="module-blinkupSDK-StaticAddressing.html">StaticAddressing</a></li></ul><h3>Global</h3><ul><li><a href="global.html#BU">BU</a></li><li><a href="global.html#BUNetworkConfig">BUNetworkConfig</a></li><li><a href="global.html#BUNetworkProxy">BUNetworkProxy</a></li><li><a href="global.html#BUStaticAddressing">BUStaticAddressing</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Thu Mar 08 2018 14:25:34 GMT-0600 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

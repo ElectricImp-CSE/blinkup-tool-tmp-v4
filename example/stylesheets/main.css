@@ -1,0 +1,641 @@
+/*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body {
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Header Styles */
+
+header {
+  padding: 20px;
+  padding-bottom: 0px;
+}
+
+header h1 {
+  font: bold 30px arial, sans-serif;
+  margin: 0 auto;
+  text-align: center;
+}
+
+header img {
+  margin: 0 auto;
+  max-width: 250px;
+  width: 100%;
+}
+
+header #impLogo {
+  max-width: 150px;
+}
+
+header p {
+  text-align: center;
+}
+
+header h2 {
+  color: rgba(84, 88, 90, 1.0);
+  font: 18px arial, sans-serif;
+  margin: 0 auto;
+  max-width: 250px;
+  text-align: center;
+}
+
+/* Form and Fieldset Styles */
+#form {
+    margin: 0 auto;
+}
+
+/* Primary Inputs */
+
+#form section.primary-inputs {
+  padding: 20px;
+}
+
+#form .field {
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 10px 0;
+  width: 100%;
+}
+
+#form input, #form label {
+  display: block;
+  width: 100%;
+}
+
+#form .radio-group input, #form .radio-group label {
+  display: inline;
+  width: auto;
+}
+
+#form .radio-group input {
+  margin-left: 20px;
+}
+
+#credentials {
+  margin-top:30px;
+}
+
+#form label {
+  color: rgba(0, 0, 0, 0.4);
+  font: bold 17px arial, sans-serif;
+  letter-spacing: 1px;
+  margin-bottom: 3px;
+}
+
+#form input {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: none;
+  box-sizing: border-box;
+  font: bold 20px arial, sans-serif;
+  padding: 3px;
+}
+
+#form input[type="text"],
+#form input[type="password"] {
+  border: solid 5px transparent;
+  color: #969696;
+  transition: border 0.3s;
+}
+#form input[type="text"]:focus,
+#form input[type="password"]:focus {
+  border: solid 5px rgba(0, 0, 0, 0.1);
+  color: black;
+  outline: none;
+}
+
+/* Secondary inputs, static-config-inputs, proxy-config-inputs */
+
+#form section.static-config-inputs {
+  /*background-color: #21ABD4;*/
+  background-color: #efefef;
+  padding: 0px 20px;
+  border-bottom: 2px solid #cfcfcf;
+}
+
+#form section.proxy-config-inputs {
+  /*background-color: #2B3E68;*/
+  background-color: #efefef;
+  padding: 0px 20px;
+}
+
+#form section.secondary-inputs input {
+  background-color: rgba(255 , 255, 255, 0.6);
+}
+
+#form section.secondary-inputs label {
+  /*color: rgba(255 , 255, 255, 0.6);*/
+  color: rgba(0, 0, 0, 0.4);
+}
+
+#form section.secondary-inputs input[type="text"]:focus,
+#form section.secondary-inputs input[type="password"]:focus {
+  border: solid 5px rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.6);
+}
+
+#form section.secondary-inputs input[type="text"],
+#form section.secondary-inputs input[type="password"] {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+#accordion-static-config, #accordion-proxy-config {
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100%;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  background: transparent none;
+  border: none;
+  /*color: rgba(255, 255, 255, 0.6);*/
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.ui-accordion .ui-accordion-header {
+  padding: .8em .5em .8em 2.2em;
+  font: bold 20px arial, sans-serif;
+}
+
+.ui-state-focus {
+  outline: none;
+}
+
+#accordion-static-config .ui-widget-content, #accordion-proxy-config .ui-widget-content {
+  background: transparent none;
+  border: none;
+}
+
+.ui-accordion .ui-accordion-content {
+  padding: 15px 10px;
+}
+
+.closed-icon
+{
+  background-image: url("../images/triangleRight.svg") !important;
+  background-size: 16px 16px;
+  height: 16px;
+  width: 16px;
+}
+
+.open-icon
+{
+  background-image: url("../images/triangleDown.svg") !important;
+  background-size: 16px 16px;
+  height: 16px;
+  width: 16px;
+}
+
+/* submission-inputs */
+#form .submission-inputs {
+}
+
+button {
+  border: none;
+  display: block;
+  margin: 20px auto;
+  max-width: 98%;
+  min-width: 300px;
+}
+
+button {
+  background: #4EA8B2;
+  border: solid 5px transparent;
+  -webkit-box-shadow: 0px 3px 6px #777;
+  -moz-box-shadow: 0px 3px 6px #777;
+  box-shadow: 0px 3px 6px #777;
+  color: #ffffff;
+  font: 20px arial, sans-serif;
+  padding: 15px 20px;
+  text-decoration: none;
+}
+
+button:hover {
+  background: rgba(26, 170, 186, 1.0);
+  text-decoration: none;
+}
+
+button:focus {
+  border: solid 5px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+button.white-button {
+  background: #efefef;
+  color: #4EA8B2;
+}
+
+button.white-button:hover {
+  background: #fff;
+  text-decoration: none;
+}
+
+button.small-button {
+  font: 15px arial, sans-serif;
+  margin: 15px auto;
+  max-width: 98%;
+  min-width: 100px;
+  padding: 8px 10px;
+}
+
+/* Lightbox */
+
+.lightbox {
+  display: none;
+  width: 300px;
+  max-width: 300px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+@media (max-width: 320px) {
+  .lightbox {
+    width: 260px;
+    max-width: 260px;
+  }
+}
+
+
+.featherlight {
+  cursor: default;
+}
+
+.canvas {
+  border: 10px solid #4EA8B2;
+  display: block;
+  height: 200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+#BU-progress {
+  display: block;
+  margin: 10px auto;
+  width: 100%;
+  height:15px;
+  background-color: #4EA8B2;
+  transform: scale(0, 1);
+  -webkit-transform: scale(0, 1);
+  -moz-transform: scale(0, 1);
+  -o-transform: scale(0, 1);
+  -ms-transform: scale(0, 1);
+}
+
+.lightbox h3 {
+  display: block;
+  font: bold 15px arial, sans-serif;
+  margin: 20px 0 15px 0;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  min-height: 35px;
+}
+
+#lightbox-close {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 24px;
+  height:35px;
+  margin: 0;
+  position: absolute;
+  right: 5px;
+  text-align: center;
+  text-decoration: none;
+  top: 0px;
+  vertical-align: middle;
+  width: 35px;
+  z-index: 999;
+}
+
+#countdown p {
+  color: #4EA8B2;
+  font-size: 100px;
+  top: 10px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+#imp-credit {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  width: 90%;
+  min-height: 62px;
+  padding-top: 20px;
+}
+
+a.agentURL p:first-of-type {
+  margin: 0px;
+  color: grey;
+}
+
+a.agentURL p:nth-child(2) {
+  margin-bottom: 0 0 15px 0;
+}
+
+#progress-img {
+  margin-bottom: 20px;
+}
+
+#result {
+  display: block;
+  margin-bottom: 20px;
+}
+
+#result.success {
+  color: green;
+}
+
+#result.failure {
+  color: red;
+}
+
+/* General */
+
+.hidden {
+  display: none;
+}
+
+.clear {
+  clear: both;
+}
+
+ul {
+  box-sizing: border-box;
+  margin: 30px auto;
+  max-width: 600px;
+  width: 100%;
+}
+
+ul li {
+  color: rgba(0, 0, 0, 0.5);
+  font: bold 20px arial, sans-serif;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after,
+    *:first-letter,
+    *:first-line {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

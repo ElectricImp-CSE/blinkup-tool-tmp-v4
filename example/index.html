@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, user-scalable=no">
+    <title>Powered by Electric Imp</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>-->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="AnimationFrame.min.js" type="text/javascript"></script>
+    <script src="blinkupSDK.min.js" type="text/javascript"></script>
+    <script src="ui.js" type="text/javascript"></script>
+    <script src="featherlight.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/normalize.css">
+    <link rel="stylesheet" href="stylesheets/featherlight.min.css">
+    <link rel="stylesheet" href="stylesheets/main.css">
+  </head>
+  <body>
+    <header>
+      <p><img alt="Logo" src="images/electricImpLogoOnWhite.svg"/></p>
+      <p><img alt="Logo" id="impLogo" src="images/electricimp.svg"/></p>
+      <h2>The end-to-end solution that connects your products to the Internet</h2>
+    </header>
+
+    <div id="form">
+      <section class="primary-inputs">
+        <div class="field" id="credentials">
+          <label for="api_key">BlinkUp&trade; API Key</label>
+          <input name="api_key" type="text" id="api_key" placeholder="required"/>
+        </div>
+        <div class="field">
+          <label>Network Type</label>
+          <div class="radio-group">
+            <input type="radio" checked="checked" id="wireless" name="network_type" />
+            <label for="wireless">Wireless</label>
+            <input type="radio" id="ethernet" name="network_type" />
+            <label for="ethernet">Ethernet</label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="ssid">Network Name</label>
+          <input name="ssid" type="text" id="ssid" placeholder="required"/>
+        </div>
+        <div class="field">
+          <label for="password">Network Password</label>
+          <input name="password" id="password" type="password" placeholder="optional" />
+        </div>
+        <br class="clear" />
+      </section> <!-- end primary inputs -->
+
+      <section class="secondary-inputs static-config-inputs">
+        <div id="accordion-static-config">
+          <fieldset id="static-config">
+            <legend>Static IP Configuration</legend>
+            <div>
+              <div class="field">
+                <label for="static_ip">IP Address</label>
+                <input type="text" id="static_ip" name="static_ip" />
+              </div>
+              <div class="field">
+                <label for="static_netmask">Netmask</label>
+                <input type="text" id="static_netmask" name="static_netmask" />
+              </div>
+              <div class="field">
+                <label for="static_gateway">Gateway</label>
+                <input type="text" id="static_gateway" name="static_gateway" />
+              </div>
+              <div class="field">
+                <label for="static_dns1">DNS Server 1</label>
+                <input type="text" id="static_dns1" name="static_dns1" />
+              </div>
+              <div class="field">
+                <label for="static_dns2">DNS Server 2 (optional)</label>
+                <input type="text" id="static_dns2" name="static_dns2" />
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </section>  <!-- end static-config-inputs -->
+      <section class="secondary-inputs proxy-config-inputs">
+        <div id="accordion-proxy-config">
+          <fieldset id="proxy-config">
+            <legend>Proxy Server Configuration</legend>
+            <div>
+              <div class="field">
+                <label for="proxy_address">Server Address</label>
+                <input type="text" id="proxy_address" name="proxy_address" />
+              </div>
+              <div class="field">
+                <label for="proxy_port">Port</label>
+                <input type="text" id="proxy_port" name="proxy_port" />
+              </div>
+              <div class="field">
+                <label for="proxy_username">Username (optional)</label>
+                <input type="text" id="proxy_username" name="proxy_username" />
+              </div>
+              <div class="field">
+                <label for="proxy_password">Password (optional)</label>
+                <input type="password" id="proxy_password" name="proxy_password" />
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </section>  <!-- end proxy-config-inputs -->
+
+      <section class="submission-inputs">
+        <button onclick="blinkUp('develop')">Connect Production Device</button>
+        <button class="white-button" onclick="blinkUp('disconnect')">Clear Device Configuration</button>
+      </section> <!-- end submission-inputs -->
+
+      <section class="tips">
+      	<p>&nbsp;</p>
+      	<h3>BlinkUp Tips</h3>
+        <ul>
+          <li>Turn your monitor screen to full brightness</li>
+          <li>Align your device in the center of the screen initiating BlinkUp</li>
+          <li>Do not move the device away from the screen for the duration of BlinkUp</li>
+          <li>Minimize ambient light</li>
+        </ul>
+      </section>
+
+    </div> <!-- end form -->
+
+    <div class="lightbox" id="lightbox-blinkUp">
+      <div>
+        <p id="lightbox-close">&#10005;</p>
+        <!-- Instructions on current step -->
+        <h3 id="current-instruction">Align device sensor to the screen</h3>
+      </div>
+
+      <div id="status">
+        <center>
+          <img id="progress-img" src="https://electricimp.com/public/img/progress.gif"/>
+          <p id="result"></p>
+        </center>
+      </div>
+
+      <div id="BU-progress">
+      </div>
+
+      <!-- For countdown -->
+      <div id="countdown" class="canvas">
+        <p></p>
+      </div>
+
+      <!-- For Flashing -->
+      <canvas id="BU-canvas" class="canvas" moz-opaque></canvas>
+
+      <img id="imp-credit" alt="Powered by Electric Imp" src="images/countdownTextBlack.svg"></img>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,1982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: blinkupSDK</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: blinkupSDK</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">JavaScript BlinkUp version 0.3.2
+blinkupSDK module.</div>
+        
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blinkupSDK.js.html">blinkupSDK.js</a>, <a href="blinkupSDK.js.html#line908">line 908</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Classes</h3>
+
+        <dl>
+            <dt><a href="module-blinkupSDK-ConfigId.html">ConfigId</a></dt>
+            <dd></dd>
+        
+            <dt><a href="module-blinkupSDK-DeviceInfo.html">DeviceInfo</a></dt>
+            <dd></dd>
+        
+            <dt><a href="module-blinkupSDK-NetworkConfig.html">NetworkConfig</a></dt>
+            <dd></dd>
+        
+            <dt><a href="module-blinkupSDK-NetworkProxy.html">NetworkProxy</a></dt>
+            <dd></dd>
+        
+            <dt><a href="module-blinkupSDK-StaticAddressing.html">StaticAddressing</a></dt>
+            <dd></dd>
+        </dl>
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id=".NetworkConfig"><span class="type-signature">(static) </span>NetworkConfig<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    NetworkConfig class constructor for imp network configuration
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blinkupSDK.js.html">blinkupSDK.js</a>, <a href="blinkupSDK.js.html#line928">line 928</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".NetworkProxy"><span class="type-signature">(static) </span>NetworkProxy<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    NetworkProxy class constructor for routing imp traffic through a proxy
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blinkupSDK.js.html">blinkupSDK.js</a>, <a href="blinkupSDK.js.html#line931">line 931</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".pollTimeout"><span class="type-signature">(static) </span>pollTimeout<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Max time to poll for a device after flash in whole seconds
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blinkupSDK.js.html">blinkupSDK.js</a>, <a href="blinkupSDK.js.html#line934">line 934</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".preventFastFlashing"><span class="type-signature">(static) </span>preventFastFlashing<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    If true, prevents the default behavior where a faster flasher is used on mobile devices
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blinkupSDK.js.html">blinkupSDK.js</a>, <a href="blinkupSDK.js.html#line937">line 937</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".progressCallback"><span class="type-signature">(static) </span>progressCallback<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    During the flashing process this function is called with the progress percentage.
+
+Setting this property will override the default progress bar behaviour.
+Care should be taken when creating the callback as any screen updates may cause
+the BlinkUp to fail on various devices. The SDK will call this method on each
+percentage point change in progress regardless of FPS.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blinkupSDK.js.html">blinkupSDK.js</a>, <a href="blinkupSDK.js.html#line978">line 978</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var blinkup = require('blinkup/blinkupSDK');
+blinkup.progressCallback = function (progress) {
+  // Perform a very fast ui update.
+  // object.style = 'translateZ(0) scale(' + progress / 100.0 + ',1)'
+};</code></pre>
+
+
+
+        
+            
+<h4 class="name" id=".StaticAddressing"><span class="type-signature">(static) </span>StaticAddressing<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    StaticAddressing class constructor for static addressing
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blinkupSDK.js.html">blinkupSDK.js</a>, <a href="blinkupSDK.js.html#line925">line 925</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getConfigId"><span class="type-signature">(static) </span>getConfigId<span class="signature">(apiKey, existingPlanId, environment, callback)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Get a ConfigId from the Electric Imp API.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>apiKey</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Your apiKey from Electric Imp</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>existingPlanId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">For production environment, existing Id previously generated by Electric Imp, or null to auto-generate a new plan Id.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>environment</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">`production` environment</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-blinkupSDK.html#~getConfigIdCompletion">module:blinkupSDK~getConfigIdCompletion</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Called on completion</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blinkupSDK.js.html">blinkupSDK.js</a>, <a href="blinkupSDK.js.html#line1021">line 1021</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var blinkup = require('blinkup/blinkupSDK');
+blinkup.getConfigId('myElectricImpAPIKey', null, 'production', function (err, configId) {
+  if (err) {
+    // Handle error
+  } else {
+     // The configId has been retrieved.
+     // Generally it should be passed to the startNetworkFlash function
+     var theConfigId = configId;
+  }
+});</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".pollForDeviceInfo"><span class="type-signature">(static) </span>pollForDeviceInfo<span class="signature">(configId, callback)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Polls the Electric Imp server to gather information about the recently flashed
+device.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>configId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-blinkupSDK-ConfigId.html">module:blinkupSDK~ConfigId</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The ConfigId used during present</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-blinkupSDK.html#~pollForDeviceInfoCompletion">module:blinkupSDK~pollForDeviceInfoCompletion</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Callback function for after device has been polled</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blinkupSDK.js.html">blinkupSDK.js</a>, <a href="blinkupSDK.js.html#line1212">line 1212</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var blinkup = require('blinkup/blinkupSDK');
+blinkup.pollForDeviceInfo (configId, function(err, deviceInfo) {
+  if (err) {
+    // Handle error
+    // (device rejected or server connection timed out)
+  } else if (deviceInfo) {
+    // Do something with deviceInfo data
+  }
+});</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".progressCallbackWillOccurr"><span class="type-signature">(static) </span>progressCallbackWillOccurr<span class="signature">(overrideFPS<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+<div class="description">
+    Evaluate if the default progressCallback function will update the progress
+bar. If the progressCalback has been manually set the returned value isn't
+valid.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>overrideFPS</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">FPS if you will be overridding the default fps</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blinkupSDK.js.html">blinkupSDK.js</a>, <a href="blinkupSDK.js.html#line989">line 989</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    true if the default progress callback function will update the
+  progress bar, false otherwise.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".startDisconnectFlash"><span class="type-signature">(static) </span>startDisconnectFlash<span class="signature">(options, callback)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Starts the BlinkUp disconnect process by targeting the BU-canvas element in the DOM.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Flashing parameters {fps: [10-60] (default:60 mobile, 20 browser)}</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">callback</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Callback function for after the BlinkUp flash finishes (no parameters)</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blinkupSDK.js.html">blinkupSDK.js</a>, <a href="blinkupSDK.js.html#line1156">line 1156</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var blinkup = require('blinkup/blinkupSDK');
+blinkup.startDisconnectFlash({}, function () {
+  // Hide the canvas and progress bar now that BlinkUp is complete
+  // hideFlashingElements();
+});</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".startNetworkFlash"><span class="type-signature">(static) </span>startNetworkFlash<span class="signature">(configId, networkConfig, Flashing, callback)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Starts the BlinkUp flash process by targeting the BU-canvas element in the DOM.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>configId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-blinkupSDK-ConfigId.html">module:blinkupSDK~ConfigId</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The ConfigId with token, planId, apiKey, and type (retrieved by getConfigId)</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>networkConfig</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-blinkupSDK-NetworkConfig.html">module:blinkupSDK~NetworkConfig</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The network configuration for the wireless network to use</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>Flashing</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">parameters {fps: [10-60] (default:60 mobile, 20 browser)}</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">callback</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Callback function for after the BlinkUp flash finishes (with success parameter)</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blinkupSDK.js.html">blinkupSDK.js</a>, <a href="blinkupSDK.js.html#line1122">line 1122</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var blinkup = require('blinkup/blinkupSDK');
+// configId, networkConfig created elsewhere
+var options = {
+};
+blinkup.startNetworkFlash(configId, networkConfig, options, function () {
+  // Hide the canvas and progress bar now that BlinkUp is complete
+  // hideFlashingElements();
+
+  // Show status of device polling
+  // setInstruction('Gathering device data (' + blinkup.pollTimeout + 's max)');
+  // document.getElementById('status').style.display = 'block';
+  // showPolling();
+
+  // Poll the device for results of the BlinkUp process
+  // getDeviceStatus(configId);
+});</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".stopFlash"><span class="type-signature">(static) </span>stopFlash<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Cancel any active BlinkUp flashing
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blinkupSDK.js.html">blinkupSDK.js</a>, <a href="blinkupSDK.js.html#line1191">line 1191</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".stopPolling"><span class="type-signature">(static) </span>stopPolling<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Cancel any active Device Polling
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blinkupSDK.js.html">blinkupSDK.js</a>, <a href="blinkupSDK.js.html#line1183">line 1183</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+
+        
+                
+
+    
+
+    <h4 class="name" id="~getConfigIdCompletion"><span class="type-signature"></span>getConfigIdCompletion<span class="signature">(error, configId)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Callback used by getConfigId.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Specifies error, null on success</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>configId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-blinkupSDK-ConfigId.html">module:blinkupSDK~ConfigId</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">ConfigId object containing token and planId information returned by API (null on failure)</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blinkupSDK.js.html">blinkupSDK.js</a>, <a href="blinkupSDK.js.html#line1089">line 1089</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="~pollForDeviceInfoCompletion"><span class="type-signature"></span>pollForDeviceInfoCompletion<span class="signature">(error, data)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Callback used by pollForDeviceInfo.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Specifies error, null on success</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-blinkupSDK-DeviceInfo.html">module:blinkupSDK~DeviceInfo</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Device information for successfully Blinked Up device (null on failure)</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blinkupSDK.js.html">blinkupSDK.js</a>, <a href="blinkupSDK.js.html#line1273">line 1273</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-blinkupSDK.html">blinkupSDK</a></li></ul><h3>Classes</h3><ul><li><a href="module-blinkupSDK-ConfigId.html">ConfigId</a></li><li><a href="module-blinkupSDK-DeviceInfo.html">DeviceInfo</a></li><li><a href="module-blinkupSDK-NetworkConfig.html">NetworkConfig</a></li><li><a href="module-blinkupSDK-NetworkProxy.html">NetworkProxy</a></li><li><a href="module-blinkupSDK-StaticAddressing.html">StaticAddressing</a></li></ul><h3>Global</h3><ul><li><a href="global.html#BU">BU</a></li><li><a href="global.html#BUNetworkConfig">BUNetworkConfig</a></li><li><a href="global.html#BUNetworkProxy">BUNetworkProxy</a></li><li><a href="global.html#BUStaticAddressing">BUStaticAddressing</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Thu Mar 08 2018 14:25:34 GMT-0600 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

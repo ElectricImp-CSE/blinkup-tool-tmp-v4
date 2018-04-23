@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: StaticAddressing</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Class: StaticAddressing</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="module-blinkupSDK.html">blinkupSDK</a>~</span>StaticAddressing</h2>
+        
+            <div class="class-description">Configure static networking information for imp configuration.</div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+    <h2>Constructor</h2>
+    
+
+    <h4 class="name" id="StaticAddressing"><span class="type-signature"></span>new StaticAddressing<span class="signature">(params)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>params</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Initialization parameters
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ip</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The IP of the device to be configured</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>netmask</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The netmask of the device to be configured</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>gateway</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The gateway of the device to be configured</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dns1</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The seconday dns of the device to be configured</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dns2</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The seconday dns of the device to be configured</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blinkupSDK.js.html">blinkupSDK.js</a>, <a href="blinkupSDK.js.html#line883">line 883</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>// Use static network addressing with a single DNS
+var blinkup = require('blinkup/blinkupSDK');
+var addressing = new blinkup.StaticAddressing({ip: '192.168.1.200', netmask: '255.255.0.0', gateway: '192.168.1.1', dns1: '8.8.8.8'});</code></pre>
+
+    <pre class="prettyprint"><code>// Use static network addressing with a two DNS servers
+var blinkup = require('blinkup/blinkupSDK');
+var addressing = new blinkup.StaticAddressing({ip: '192.168.1.200', netmask: '255.255.0.0', gateway: '192.168.1.1', dns1: '8.8.8.8', dns2: '8.8.4.4'});</code></pre>
+
+    <pre class="prettyprint"><code>// Using globals rather than modules
+var addressing = new BU.StaticAddressing({ip: '192.168.1.200', netmask: '255.255.0.0', gateway: '192.168.1.1', dns1: '8.8.8.8'});</code></pre>
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="dns1"><span class="type-signature"></span>dns1<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    (Required) The dns of the device to be configured
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blinkupSDK.js.html">blinkupSDK.js</a>, <a href="blinkupSDK.js.html#line891">line 891</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="dns2"><span class="type-signature"></span>dns2<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    (Optional) The seconday dns of the device to be configured
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blinkupSDK.js.html">blinkupSDK.js</a>, <a href="blinkupSDK.js.html#line893">line 893</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="gateway"><span class="type-signature"></span>gateway<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    (Required) The gateway of the device to be configured
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blinkupSDK.js.html">blinkupSDK.js</a>, <a href="blinkupSDK.js.html#line889">line 889</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="ip"><span class="type-signature"></span>ip<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    (Required) The IP of the device to be configured
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blinkupSDK.js.html">blinkupSDK.js</a>, <a href="blinkupSDK.js.html#line885">line 885</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="netmask"><span class="type-signature"></span>netmask<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    (Required) The netmask of the device to be configured
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blinkupSDK.js.html">blinkupSDK.js</a>, <a href="blinkupSDK.js.html#line887">line 887</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="isComplete"><span class="type-signature"></span>isComplete<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Validates that the object represents a valid network configuration
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blinkupSDK.js.html">blinkupSDK.js</a>, <a href="blinkupSDK.js.html#line897">line 897</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-blinkupSDK.html">blinkupSDK</a></li></ul><h3>Classes</h3><ul><li><a href="module-blinkupSDK-ConfigId.html">ConfigId</a></li><li><a href="module-blinkupSDK-DeviceInfo.html">DeviceInfo</a></li><li><a href="module-blinkupSDK-NetworkConfig.html">NetworkConfig</a></li><li><a href="module-blinkupSDK-NetworkProxy.html">NetworkProxy</a></li><li><a href="module-blinkupSDK-StaticAddressing.html">StaticAddressing</a></li></ul><h3>Global</h3><ul><li><a href="global.html#BU">BU</a></li><li><a href="global.html#BUNetworkConfig">BUNetworkConfig</a></li><li><a href="global.html#BUNetworkProxy">BUNetworkProxy</a></li><li><a href="global.html#BUStaticAddressing">BUStaticAddressing</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Thu Mar 08 2018 14:25:34 GMT-0600 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
