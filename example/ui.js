@@ -300,7 +300,7 @@ function getDeviceStatus (configId) {
       showResult(err, false);
     } else if (deviceInfo) {
       setInstruction('Device is connected');
-      if (deviceInfo.agentURL === '' || deviceInfo.agentURL === 'https://agent.electricimp.com/NoModelSetForDevice') {
+      if (deviceInfo.agentURL === '' || deviceInfo.agentURL === 'https://agent.devices.lunera.com/NoModelSetForDevice') {
         showResult('<h4>Agent URL</h4><span>Generate unique Agent URL using Electric Imp IDE to access this agent remotely. In IDE, assign this device to a model to get an Agent URL.</span><h4>Device ID</h4>' + deviceInfo.deviceId, true);
       } else {
         var splitArr = deviceInfo.agentURL.split('/');
